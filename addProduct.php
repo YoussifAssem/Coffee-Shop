@@ -1,5 +1,5 @@
 <?php
-  include 'product.php';
+  include 'Product.php';
 
   $ProductObj = new Product();
   if(isset($_POST['submit'])) {
