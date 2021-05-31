@@ -51,17 +51,17 @@ class User{
         if($row['userType'] == 1){
          session_start();
          $_SESSION['email'] = $email;  
-         header('Location: includes/admin.php');
+         header('Location: admin.php');
        }
        if($row['userType'] == 2){
          session_start();
          $_SESSION['email'] = $email;  
-         header('Location: includes/employee.php'); 
+         header('Location: employee.php'); 
       }
        if($row['userType'] == 3){
          session_start();
          $_SESSION['email'] = $email;  
-         header('Location: includes/customer.php');
+         header('Location: customer.php');
        }
        
        else{

@@ -6,16 +6,10 @@ class Admin extends User{
     }
     public function removeEmployee($email){
         include 'dB.php';
-        $sql = mysqli_query($conn, 'DELETE FROM User WHERE email='$email' AND userType=2');
-        if(mysqli_num_rows($sql) > 0){
+        $sql = mysqli_query($conn, "DELETE FROM User WHERE email='$email' AND userType=2 ");
             echo '<script>alert("Done, Employee Removed Successfully")</script>';
-            return;
+            header('Refresh: 0.1');
         }
-        else{
-            echo '<script>alert("Error, Data Is Not Correct")</script>';
-            return;
-        }
-    }
     public function editEmployee($email, $password){
             include 'dB.php';
             session_start();

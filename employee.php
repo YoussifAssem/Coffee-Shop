@@ -106,12 +106,12 @@ background-color: #30593D;
         <nav>
             <ul class="nav_links">
                 <li><a href="#">HOME</a></li>
-                <li><a href="../addProduct.php">Add</a></li>
-                <li><a href="../Employee.php">Remove</a></li>
-                <li><a href="../Employee.php">View</a></li>
+                <li><a href="addProduct.php">Add</a></li>
+                <li><a href="Employee.php">Remove</a></li>
+                <li><a href="Employee.php">View</a></li>
             </ul>
         </nav>
        
-         <input type="submit" class="button1" onclick="document.location='../logOut.php'" value="Log Out" name="submit">
+         <input type="submit" class="button1" onclick="document.location='logOut.php'" value="Log Out" name="submit">
     </header>
     </html>
