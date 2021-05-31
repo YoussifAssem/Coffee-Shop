@@ -1,102 +1,117 @@
-<?php
+<html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   
-  include 'Product.php';
+}
 
-  $productObj = new Product();
 
-  if(isset($_GET['deleteId']) && !empty($_GET['deleteId'])) {
-      $deleteId = $_GET['deleteId'];
-      $productObj->deleteRecord($deleteId);
-  }
-     
-?> 
-<!DOCTYPE html>
-<html lang="en">
+li,a,button{
+  font-family: "Montserrat",sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10px;
+  height: 100px;
+  background-color: black;
+  /* margin-bottom: 50px; */
+}
+.logo{
+  cursor:pointer;
+  width: 300px;
+  height: 100%;
+  text-align: center;
+}
+
+.logo img {
+  width: 100px;
+  height: 100%;
+}
+nav{
+  width:400%;
+  margin: 0 auto;
+  text-align: left;
+}
+.nav_links{
+   
+  list-style: none;
+}
+.nav_links li{
+  display: inline-block;
+  
+  padding: 0px 20px;
+}
+.nav_links li a{
+  transition: all 0.3s ease 0s;
+}
+.nav_links li a:hover{
+  color: #30593D;
+   
+}
+.nav_links li a:after {
+  content: "";
+  position: absolute;
+  text-decoration: #30593D;
+  height: 10px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+.nav_links li a:hover:after {
+  width: 100%;
+}
+.button{
+  padding: 9px 25px;
+  /* margin-left: 620px; */
+  background-color: white;
+  color: black;
+border: none;
+border-radius: 50px;
+cursor:pointer ;
+transition: all 0.3s ease 0s;
+}
+.button:hover{
+background-color: #30593D;
+}
+.button1{
+  padding: 9px 25px;
+  background-color: #30593D;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor:pointer ;
+  transition: all 0.3s ease 0s;
+  margin-left: 15px;
+}
+    </style>
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+<meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 </head>
-<body>
 
-<div class="card text-center" style="padding:15px;">
-  <h4>Products</h4>
-</div><br><br> 
-
-<div class="container">
-  <?php
-    if (isset($_GET['msg1']) == "insert") {
-      echo "<div class='alert alert-success alert-dismissible'>
-              <button type='button' class='close' data-dismiss='alert'>&times;</button>
-              New Product added successfully
-            </div>";
-      } 
-    if (isset($_GET['msg2']) == "update") {
-      echo "<div class='alert alert-success alert-dismissible'>
-              <button type='button' class='close' data-dismiss='alert'>&times;</button>
-              Product updated successfully
-            </div>";
-    }
-    if (isset($_GET['msg3']) == "delete") {
-      echo "<div class='alert alert-success alert-dismissible'>
-              <button type='button' class='close' data-dismiss='alert'>&times;</button>
-                Product deleted successfully
-            </div>";
-    }
-    if (isset($_GET['msg4']) == "missing") {
-      echo "<div class='alert alert-warning alert-dismissible'>
-              <button type='button' class='close' data-dismiss='alert'>&times;</button>
-                Complete your data 
-            </div>";
-    }
-  ?>
-  <h2>Available Products:
-    <a href="addProduct.php" class="btn btn-primary" style="float:right;">Add new product</a>
-  </h2>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Product Name</th>
-        <th>Type</th>
-        <th>Falvors</th>
-        <th>Description</th>
-        <th>Price</th>
-		<th>Image</th>
-      </tr>
-    </thead>
-    <tbody>
-        <?php 
-          $product = $productObj->displayData(); 
-		  
-		  
-		  if ($product==Null)
-			  print("No products Available");
-		  else
-		  {
-          foreach ($product as $produt1) {
-        ?>
-        <tr>
-          <td><?php echo $produt1['ProductName'] ?></td>
-          <td><?php echo $produt1['ProductType'] ?></td>
-          <td><?php echo $produt1['ProductFlavors'] ?></td>
-          <td><?php echo $produt1['Description'] ?></td>
-          <td><?php echo $produt1['Price'] ?>EGP</td>
-		 
-		 <td><?php echo "<img src='Products/".$produt1['Image']."' width='400' height='200' >";?></td>
-          <td>
-            <a href="editProduct.php?editId=<?php echo $produt1['ProductID'] ?>" style="color:green">
-              <i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp
-            <a href="Employee.php?deleteId=<?php echo $produt1['ProductID'] ?>" style="color:red" onclick="confirm('Are you sure want to delete this record')">
-              <i class="fa fa-trash" aria-hidden="true"></i>
+    <header>
+        <div class="logo">
             </a>
-          </td>
-        </tr>
-		
-		 <?php }?>
-      <?php } ?>
-    </tbody>
-  </table>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+        </div>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="#">HOME</a></li>
+                <li><a href="addProduct.php">Add</a></li>
+                <li><a href="Employee.php">Remove</a></li>
+                <li><a href="Employee.php">View</a></li>
+            </ul>
+        </nav>
+       
+         <input type="submit" class="button1" onclick="document.location='logOut.php'" value="Log Out" name="submit">
+    </header>
+    </html>

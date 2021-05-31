@@ -58,6 +58,7 @@
 		}
 		public function updateRecord($postData)
 		{
+			
 			$ProductName  = $conn->real_escape_string($_POST['ProductName']);
 			$ProductType = $conn->real_escape_string($_POST['ProductType']);
 			$ProductFlavors = $conn->real_escape_string($_POST['ProductFlavors']);
