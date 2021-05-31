@@ -1,6 +1,6 @@
 <?php
   include 'Product.php';
-
+ 
   $ProductObj = new Product();
   if(isset($_POST['submit'])) {
     $ProductObj->InsertNewProduct($_POST);

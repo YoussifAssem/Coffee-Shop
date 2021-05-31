@@ -46,9 +46,10 @@
 		}
 		public function displyaRecordById($id)
 		{
-			$query = "SELECT * FROM Products WHERE ProductID = '$id'";
-			$result = $conn->query($query);
-			if ($result->num_rows > 0) {
+			include 'dB.php';
+			$query = "SELECT * FROM products WHERE ProductID = '$id'";
+			$result = mysqli_query($conn, $query);
+			if (mysqli_num_rows($result) > 0) {
 				$row = $result->fetch_assoc();
 				return $row;
 			}else{
@@ -85,11 +86,9 @@
 		}
 		public function deleteRecord($id)
 		{
-			$query = "DELETE FROM Products WHERE ProductID = '$id'";
+			include 'dB.php';
+			$query = "DELETE FROM products WHERE ProductID = '$id'";
 			$sql = mysqli_query($conn,$query);
-			if ($sql) {
-				header("Location:employee.php?msg3=delete");
-			}
 		}
 
 	}

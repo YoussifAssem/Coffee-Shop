@@ -33,8 +33,9 @@
     
 	 <div class="form-group">
       <label for="name">Product Type:</label>
-      <select class="form-control" name="ProductType" value="<?php echo $Product['ProductType']; ?>" required="">
-     <option value="House blend">House blend</option>
+      <select class="form-control" name="ProductType" required="">
+ <option  value="<?php echo $Product['ProductType']; ?>"> <?php echo $Product['ProductType']; ?> </option>
+  <option value="House blend">House blend</option>
   <option value="Dark roast">Dark roast</option>
   <option value="Decaf">Decaf</option>
   <option value="Espresso">Espresso</option>
@@ -44,8 +45,9 @@
 	
 	<div class="form-group">
       <label for="name">Product Flavors</label>
-      <select class="form-control" name="ProductFlavors" value="<?php echo $Product['ProductFlavors']; ?>" required="">
-     <option value="Steamed milk">Steamed milk</option>
+      <select class="form-control" name="ProductFlavors" required="">
+  <option value="<?php echo $Product['ProductFlavors']; ?>" ><?php echo $Product['ProductFlavors']; ?></option>
+  <option value="Steamed milk">Steamed milk</option>
   <option value="Foamed milk">Foamed milk</option>
   <option value="Soy">Soy</option>
   <option value="Chocolate">Chocolate</option>

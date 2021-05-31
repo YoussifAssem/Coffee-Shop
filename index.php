@@ -16,7 +16,7 @@
       <div class="forms-container">
         <div class="signin-signup">
 
-          <form action="#"  method="post"class="sign-in-form">
+          <form action=""  method="POST" class="sign-in-form">
             <h2 class="title">Sign in</h2>
 
             <div class="input-field">
@@ -26,7 +26,7 @@
 
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password"required/> 
+              <input type="password" name= 'password' placeholder="Password"required/> 
             </div>
 
             <input type="submit" value="Login"name="login" class="btn solid" />
@@ -90,3 +90,17 @@
     <script src="main.js"></script>
   </body>
 </html>
+
+
+<?php
+include 'User.php';
+if(isset($_POST['login'])){
+$user = new User();
+$user->logIn($_POST['email'], $_POST['password']);
+}
+if(isset($_POST['submit'])){
+  $user = new User();
+  $user->addUser($_POST['email'], $_POST['password'], 3);
+  }
+  
+?>

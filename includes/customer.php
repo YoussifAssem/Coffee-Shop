@@ -111,6 +111,6 @@ background-color: #30593D;
             </ul>
         </nav>
        
-         <input type="submit" class="button1" onclick="document.location='#'" value="Log Out" name="submit">
+         <input type="submit" class="button1" onclick="document.location='../logOut.php'" value="Log Out" name="submit">
     </header>
     </html>

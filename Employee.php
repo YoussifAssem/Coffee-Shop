@@ -1,6 +1,7 @@
 <?php
   
   include 'Product.php';
+
   $productObj = new Product();
 
   if(isset($_GET['deleteId']) && !empty($_GET['deleteId'])) {
@@ -84,7 +85,7 @@
           <td>
             <a href="editProduct.php?editId=<?php echo $produt1['ProductID'] ?>" style="color:green">
               <i class="fa fa-pencil" aria-hidden="true"></i></a>&nbsp
-            <a href="employee.php?deleteId=<?php echo $produt1['ProductID'] ?>" style="color:red" onclick="confirm('Are you sure want to delete this record')">
+            <a href="Employee.php?deleteId=<?php echo $produt1['ProductID'] ?>" style="color:red" onclick="confirm('Are you sure want to delete this record')">
               <i class="fa fa-trash" aria-hidden="true"></i>
             </a>
           </td>

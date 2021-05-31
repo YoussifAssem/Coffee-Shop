@@ -4,7 +4,7 @@ class User{
   private $password;
   private $userType;
 
-  function addUser($email, $password, $userType){
+  public function addUser($email, $password, $userType){
      $this->email = $email;
      $this->password = $password;
      $this->userType = $userType;
@@ -51,17 +51,17 @@ class User{
         if($row['userType'] == 1){
          session_start();
          $_SESSION['email'] = $email;  
-         //Call Page
+         header('Location: includes/admin.php');
        }
        if($row['userType'] == 2){
          session_start();
          $_SESSION['email'] = $email;  
-         //Call Page
-       }
+         header('Location: includes/employee.php'); 
+      }
        if($row['userType'] == 3){
          session_start();
          $_SESSION['email'] = $email;  
-         //Call Page
+         header('Location: includes/customer.php');
        }
        
        else{
