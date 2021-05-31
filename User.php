@@ -43,6 +43,40 @@ class User{
   public function getPassword(){
      return $this->password;
   }
+  public function logIn($email, $password){
+   include 'dB.php';
+   $sql = mysqli_query($conn,"SELECT * FROM User WHERE email='$email' AND password='$password'");
+   if(mysqli_num_rows($sql) > 0){
+      if($row = mysqli_fetch_assoc($sql)){
+        if($row['userType'] == 1){
+         session_start();
+         $_SESSION['email'] = $email;  
+         //Call Page
+       }
+       if($row['userType'] == 2){
+         session_start();
+         $_SESSION['email'] = $email;  
+         //Call Page
+       }
+       if($row['userType'] == 3){
+         session_start();
+         $_SESSION['email'] = $email;  
+         //Call Page
+       }
+       
+       else{
+         echo '<script>alert("Error, Customer Is Not Exist")</script>';
+         return;
+             
+       }
+   }
+   else{
+       echo '<script>alert("Error, Data Is Not True")</script>';
+       return;
+   }
+ }
+
+  }
 }
 
 
