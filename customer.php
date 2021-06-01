@@ -108,9 +108,16 @@ background-color: #30593D;
                 <li><a href="#">HOME</a></li>
                 <li><a href="ViewProductsCustomers.php">Products</a></li>
                 <li><a href="#">Cart</a></li>
+                <li><a href="customerEditProfileFrontEnd.php">Edit Profile</a></li>
+
+                <li><h4><?php
+                session_start();
+                echo 'Welcome' .$_SESSION['email'];
+                ?></h4></li>
+                
             </ul>
         </nav>
        
-         <input type="submit" class="button1" onclick="document.location='../logOut.php'" value="Log Out" name="submit">
+         <input type="submit" class="button1" onclick="document.location='logOut.php'" value="Log Out" name="submit">
     </header>
     </html>

@@ -107,8 +107,17 @@ background-color: #30593D;
             <ul class="nav_links">
                 <li><a href="#">HOME</a></li>
                 <li><a href="addProduct.php">Add</a></li>
+
                 <li><a href="Employeephp.php">Remove</a></li>
                 <li><a href="Employeephp.php">View</a></li>
+
+              
+                <li><h4><?php
+                session_start();
+                echo 'Welcome' .$_SESSION['email'];
+                ?></h4></li>
+                
+
             </ul>
         </nav>
        
