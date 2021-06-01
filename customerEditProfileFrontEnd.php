@@ -21,7 +21,6 @@ include 'customer.php';
 <form method='POST' action=''>
 <?php
  include 'dB.php';
- session_start();
  $sql = mysqli_query($conn, "SELECT * FROM User WHERE email='".$_SESSION['email']."'");
  if($row = mysqli_fetch_assoc($sql)){
 ?>
