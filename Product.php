@@ -25,7 +25,7 @@
 			move_uploaded_file($file_tmp,"Products/".$file_name);
 			
 	if ($result) {
-		header("Location:employee.php?msg1=insert");
+		header("Location:Employeephp.php?msg1=insert");
 	} 
 
 		
@@ -58,7 +58,7 @@
 		}
 		public function updateRecord($postData)
 		{
-			
+			include 'dB.php';
 			$ProductName  = $conn->real_escape_string($_POST['ProductName']);
 			$ProductType = $conn->real_escape_string($_POST['ProductType']);
 			$ProductFlavors = $conn->real_escape_string($_POST['ProductFlavors']);
@@ -74,13 +74,11 @@
 			$ProductID= $conn->real_escape_string($_POST['ProductID']);
 			if (!empty($ProductID) && !empty($postData)) {
 				$sql = "UPDATE Products SET ProductName='$ProductName',ProductType='$ProductType',ProductFlavors='$ProductFlavors',Description='$Description', Price='$Price', Image='$file_name' WHERE ProductID = $ProductID";
-				$result = mysqli_query($this->con,$sql);
+				$result = mysqli_query($conn,$sql);
 				move_uploaded_file($file_tmp,"Products/".$file_name);
 			if ($result) {
-  header("Location:employee.php?msg2=update");
-} else {
-  echo "Error: " . $sql . "<br>" . $this->con->error;
-}
+  header("Location:Employeephp.php?msg2=update");
+} 
 				
 			}
 			
@@ -90,6 +88,9 @@
 			include 'dB.php';
 			$query = "DELETE FROM products WHERE ProductID = '$id'";
 			$sql = mysqli_query($conn,$query);
+			if ($sql){
+			header("Location:Employeephp.php?msg3=delete");
+			}
 		}
 
 	}
