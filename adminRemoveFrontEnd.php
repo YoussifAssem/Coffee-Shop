@@ -43,7 +43,7 @@ while($row = mysqli_fetch_array($sql)){
 
 
 <?php
-include 'Admin.php';
+include 'Adminphp.php';
 if(isset($_POST['sub'])){
     $admin = new Admin();
     foreach($_POST['delete'] as $dele)

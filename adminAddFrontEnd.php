@@ -26,9 +26,9 @@ include 'admin.php';
 
 
 <?php
-include 'Admin.php';
+include 'Adminphp.php';
 if(isset($_POST['sub'])){
     $admin = new Admin();
-    $admin->addEmployee($_POST['email'], $_POST['password'], 2);
+    $admin->addEmployee($_POST['email'], $_POST['password']);
 }
 ?>

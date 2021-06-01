@@ -109,6 +109,11 @@ background-color: #30593D;
                 <li><a href="adminAddFrontEnd.php">Add</a></li>
                 <li><a href="adminRemoveFrontEnd.php">Remove</a></li>
                 <li><a href="adminViewFrontEnd.php">View</a></li>
+
+                <li><h4><?php
+                session_start();
+                echo 'Welcome' .$_SESSION['email'];
+                ?></h4></li>
             </ul>
         </nav>
        

@@ -109,6 +109,11 @@ background-color: #30593D;
                 <li><a href="addProduct.php">Add</a></li>
                 <li><a href="Employee.php">Remove</a></li>
                 <li><a href="Employee.php">View</a></li>
+                <li><h4><?php
+                session_start();
+                echo 'Welcome' .$_SESSION['email'];
+                ?></h4></li>
+                
             </ul>
         </nav>
        
