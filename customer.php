@@ -106,7 +106,7 @@ background-color: #30593D;
         <nav>
             <ul class="nav_links">
                 <li><a href="#">HOME</a></li>
-                <li><a href="#">Product</a></li>
+                <li><a href="ViewProductsCustomers.php">Products</a></li>
                 <li><a href="#">Cart</a></li>
             </ul>
         </nav>
